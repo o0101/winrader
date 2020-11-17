@@ -1,6 +1,6 @@
 {
   "name": "winrader",
-  "version": "1.0.94",
+  "version": "1.0.95",
   "description": "Windows 95 running inside Grader.JS. No affiliation with Microsoft.",
   "main": "src/launcher.js",
   "bin": {
