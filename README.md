@@ -36,6 +36,14 @@ Assuming you've already done the above steps to run from source, then do:
 $ ./scripts/compile.sh
 ```
 
+## nerd warning
+
+**WARNING:** This project uses Google Chrome to display the UI. Running this will download and install Google Chrome if you don't already have it installed. If you are allergic to Google Chrome, please avoid running or ingesting this binary.
+
+## security warning
+
+**WARNING:** Normally, for security, GraderJS will inflate the app contents from the virtual filesystem inside the binary every time you run yer app. But because this project is so massive (it uses a OS image), inflating takes a long time, so I add a "hack" in the `launcher.js` code to only inflate it the first time, to save you time for your convenience. This makes your on-disk code vulnerable to malicious editing. For example someone could overwrite your index.html file because we don't refresh it every time.
+
 ## related projects
 
 - [Grader.JS](https://github.com/c9fe/graderjs) - the cross-platform app-builder I used to make this
