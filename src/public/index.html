@@ -1,0 +1,62 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>winrader</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script src="build/libv86.js"></script>
+<style>
+  :root, body, #main, canvas {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    cursor: none;
+    user-select: none;
+    background: blue;
+    color: yellow;
+    font-family: monospace;
+    font-weight: bold;
+  }
+</style>
+<main id=main><div></div><canvas></canvas></main>
+<script>
+  document.exitPointerLock = document.exitPointerLock    ||
+                             document.mozExitPointerLock;
+  window.onload = () => {
+    const win = document.querySelector('#main');
+		const imageSize = 1073741824;
+		const options = {
+			memory_size: 128 * 1024 * 1024,
+			video_memory_size: 32 * 1024 * 1024,
+			screen_container: win,
+			bios: {
+				url: "./bios/seabios.bin",
+			},
+			vga_bios: {
+				url: "./bios/vgabios.bin",
+			},
+			hda: {
+				url: "./images/windows95.img",
+				async: true,
+				size: imageSize,
+			},
+      /*
+			boot_order: 0x132,
+      */
+      autostart: true
+		};
+    const m = new V86Starter(options);
+    m.mouse_set_status(false);
+    win.addEventListener('click', () => {
+      m.lock_mouse();
+      m.mouse_set_status(true);
+    });
+    window.addEventListener('keydown', e => {
+      if ( e.key == 'Escape' ) {
+        m.mouse_set_status(false);
+        document.exitPointerLock();
+      }
+    }, {capture:true, passive:true});
+  };
+</script>
