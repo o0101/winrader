@@ -21,8 +21,24 @@ This project is provided for educational purposes only. I do not own any of the 
 - development time: < 2 hours
 - lines of code: < 100
 
+## to run this from source
+
+1. you need to glone the repo
+2. `npm install`
+3. you need a `windows95.img` file. I got mine from [felixrieseberg's releases](https://github.com/felixrieseberg/windows95/releases)
+4. `npm test`
+
+## to build the binary
+
+Assuming you've already done the above steps to run from source, then do:
+
+```console
+$ ./scripts/compile.sh
+```
+
 ## related projects
 
+- [Grader.JS](https://github.com/c9fe/graderjs) - the cross-platform app-builder I used to make this
 - [felixrieseberg/windows95](https://github.com/felixrieseberg/windows95) - the original and best windows-in-a-box
 - [copy/images](https://github.com/copy/images) - not including the windows 95 image ([which was obtained from felixrieseberg's releases](https://github.com/felixrieseberg/windows95/releases)), a variety of images that in future will also be run in Grader.JS
 - [copy/v86](https://github.com/copy/v86/) - x86 virtualization in JS
