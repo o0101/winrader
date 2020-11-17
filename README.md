@@ -1,6 +1,6 @@
 # winrader
 
-Windows 95 in Grader.JS. Yep, it's the whole thing. I'm not sorry. 
+Windows 95 in [Grader.JS](https://github.com/c9fe/graderjs). Yep, it's the whole thing. I'm not sorry. 
 
 ## license
 

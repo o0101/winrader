@@ -29,27 +29,27 @@
                              document.mozExitPointerLock;
   window.onload = () => {
     const win = document.querySelector('#main');
-		const imageSize = 1073741824;
-		const options = {
-			memory_size: 128 * 1024 * 1024,
-			video_memory_size: 32 * 1024 * 1024,
-			screen_container: win,
-			bios: {
-				url: "./bios/seabios.bin",
-			},
-			vga_bios: {
-				url: "./bios/vgabios.bin",
-			},
-			hda: {
-				url: "./images/windows95.img",
-				async: true,
-				size: imageSize,
-			},
+    const imageSize = 1073741824;
+    const options = {
+      memory_size: 128 * 1024 * 1024,
+      video_memory_size: 32 * 1024 * 1024,
+      screen_container: win,
+      bios: {
+        url: "./bios/seabios.bin",
+      },
+      vga_bios: {
+        url: "./bios/vgabios.bin",
+      },
+      hda: {
+        url: "./images/windows95.img",
+        async: true,
+        size: imageSize,
+      },
       /*
-			boot_order: 0x132,
+      boot_order: 0x132,
       */
       autostart: true
-		};
+    };
     const m = new V86Starter(options);
     m.mouse_set_status(false);
     win.addEventListener('click', () => {
@@ -63,12 +63,18 @@
       }
     }, {capture:true, passive:true});
 
-    const checkSize = startInterval(() => {
+    let width,height;
+
+    const checkSize = setInterval(async () => {
       const canv = win.querySelector('canvas');
-      if ( canv.width && canv.height ) {
-        clearInterval(checkSize);
-        grader.ui.size({width:canv.width,height:canv.height});
+      const [newWidth,newHeight] = ['width','height'].map(d => parseInt(canv.getAttribute(d)));
+      if ( newWidth && newHeight && (width != newWidth || height != newHeight) ) {
+        width = newWidth;
+        height = newHeight;
+        await grader.ui.size({width,height});
+        canv.style.width = "100%";
+        canv.style.height = "100%";
       }
-    });
+    }, 500);
   };
 </script>
