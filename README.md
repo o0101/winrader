@@ -2,7 +2,9 @@
 
 Windows 95 in [Grader.JS](https://github.com/c9fe/graderjs). Yep, it's the whole thing. I'm not sorry. 
 
-<img srchttps://github.com/c9fe/winrader/raw/master/.readme-assets/winraderproof.JPG alt="winrader running Windows 95 on Ubuntu" width=768>
+<p align=center>
+<img src=https://github.com/c9fe/winrader/raw/master/.readme-assets/winraderproof.JPG alt="winrader running Windows 95 on Ubuntu" width=768>
+</p>
 
 ## license
 
