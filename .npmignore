@@ -1,0 +1,5 @@
+build/*.zip
+src/public/images/*
+images/*
+bin/*
+
