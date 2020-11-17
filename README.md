@@ -36,6 +36,14 @@ Assuming you've already done the above steps to run from source, then do:
 $ ./scripts/compile.sh
 ```
 
+## nerd warning
+
+**WARNING:** This project uses Google Chrome to display the UI. Running this will download and install Google Chrome if you don't already have it installed. If you are allergic to Google Chrome, please avoid running or ingesting this binary.
+
+## security warning
+
+**WARNING:** Normally, for security, GraderJS will inflate the app contents from the virtual filesystem inside the binary every time you run yer app. But because this project is so massive (it uses a OS image), inflating takes a long time, so I add a "hack" in the `launcher.js` code to only inflate it the first time, to save you time for your convenience. This makes your on-disk code vulnerable to malicious editing. For example someone could overwrite your index.html file because we don't refresh it every time.
+
 ## related projects
 
 - [Grader.JS](https://github.com/c9fe/graderjs) - the cross-platform app-builder I used to make this
@@ -43,6 +51,7 @@ $ ./scripts/compile.sh
 - [copy/images](https://github.com/copy/images) - not including the windows 95 image ([which was obtained from felixrieseberg's releases](https://github.com/felixrieseberg/windows95/releases)), a variety of images that in future will also be run in Grader.JS
 - [copy/v86](https://github.com/copy/v86/) - x86 virtualization in JS
 - [win95.ajf.me](https://win95.ajf.me/) - Windows 95 running in DOSBOX converted to JS via emscripten
+- [Archive.org MSDOS games library](https://archive.org/details/softwarelibrary_msdos_games?&sort=-downloads&page=2) - classic DOS games playable in yer browser
 
 
 
