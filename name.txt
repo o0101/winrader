@@ -1,1 +1,1 @@
-grader_app_name="winrader-base"
+grader_app_name="winrader"

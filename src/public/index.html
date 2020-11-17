@@ -18,6 +18,10 @@
     font-family: monospace;
     font-weight: bold;
   }
+
+  canvas {
+    margin: auto;
+  }
 </style>
 <main id=main><div></div><canvas></canvas></main>
 <script>
@@ -58,5 +62,13 @@
         document.exitPointerLock();
       }
     }, {capture:true, passive:true});
+
+    const checkSize = startInterval(() => {
+      const canv = win.querySelector('canvas');
+      if ( canv.width && canv.height ) {
+        clearInterval(checkSize);
+        grader.ui.size({width:canv.width,height:canv.height});
+      }
+    });
   };
 </script>

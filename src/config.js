@@ -1,17 +1,17 @@
 module.exports = {
-  name: "MyGraderApp",
+  name: "winrader",
   entry: "./app.js",
   author: {
-    name: "my name",
-    url: "https://github.com/my-github-username",
+    name: "Cris Stringfellow & Dosyago",
+    url: "https://github.com/c9fe",
   },
-  desiredPort: 49666,
-  version: "0.0.1",
-  description: "Gorgeous",
-  source: "https://github.com/my-github-username/MyGraderApp",
+  desiredPort: 59271,
+  version: "1.0.95",
+  description: "Windows 95 in Grader.JS. No association with Microsoft.",
+  source: "https://github.com/c9fe/winrader",
   organization: {
-    name: "My Org",
-    url: "https://github.com/my-github-org-name"
+    name: "The Dosyago Corporation",
+    url: "https://github.com/dosyago"
   },
   apiOrigins: [],                   // exact origins allowed to call Service API via grader global,
   DEBUG: false
