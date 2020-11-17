@@ -43,6 +43,7 @@ $ ./scripts/compile.sh
 - [copy/images](https://github.com/copy/images) - not including the windows 95 image ([which was obtained from felixrieseberg's releases](https://github.com/felixrieseberg/windows95/releases)), a variety of images that in future will also be run in Grader.JS
 - [copy/v86](https://github.com/copy/v86/) - x86 virtualization in JS
 - [win95.ajf.me](https://win95.ajf.me/) - Windows 95 running in DOSBOX converted to JS via emscripten
+- [Archive.org MSDOS games library](https://archive.org/details/softwarelibrary_msdos_games?&sort=-downloads&page=2) - classic DOS games playable in yer browser
 
 
 
